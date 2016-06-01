@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>InfoThreshold__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>First notification will be sent if remaining licenses number will be below this threshold.</inlineHelpText>
+        <label>Info Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Setting__c</fullName>
+        <externalId>false</externalId>
+        <label>NotificatorSetting</label>
+        <referenceTo>NotificatorSetting__c</referenceTo>
+        <relationshipLabel>Notificator Licenses</relationshipLabel>
+        <relationshipName>NotificatorLicenses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>OK</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WarningThreshold__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Final notification will be sent if remaining licenses number will be below this threshold.</inlineHelpText>
+        <label>Warning Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Notificator License</label>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Notificator Licenses</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Info_positive</fullName>
+        <active>true</active>
+        <errorConditionFormula>InfoThreshold__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>InfoThreshold__c</errorDisplayField>
+        <errorMessage>Info Threshold must be positive</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Warning_less_Info</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(WarningThreshold__c &lt;  InfoThreshold__c)</errorConditionFormula>
+        <errorDisplayField>WarningThreshold__c</errorDisplayField>
+        <errorMessage>Warning Threshold must be lesser than Info Threshold.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Warning_positive</fullName>
+        <active>true</active>
+        <errorConditionFormula>WarningThreshold__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>WarningThreshold__c</errorDisplayField>
+        <errorMessage>Warning Threshold must be positive</errorMessage>
+    </validationRules>
+</CustomObject>

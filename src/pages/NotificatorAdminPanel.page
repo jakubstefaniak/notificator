@@ -1,0 +1,57 @@
+<apex:page controller="NotificatorAdminPanelController" >
+	<apex:stylesheet value="{!URLFOR($Resource.notificator_styles)}"/>
+    <apex:form >
+        <apex:pageBlock title="{!$Label.Notificator_PageHeader}">
+   			<apex:pageMessages />            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveNotificator}" value="{!$Label.Notificator_SaveButton}" id="saveButton"/>
+                <apex:commandButton action="{!runJob}" value="{!$Label.Notificator_RunButton}"  rendered="{!RunJobButtonActive}"/>                
+                <apex:commandButton action="{!killjob}" value="{!$Label.Notificator_KillButton}"  rendered="{!KillJobButtonActive}"/>                
+                <apex:commandButton action="{!reset}" value="{!$Label.Notificator_ResetButton}"/>                   
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1" title="{!$Label.Notificator_RecipientHeader}">         
+	        	<apex:inputField value="{!notificator.recipient__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" title="{!$Label.Notificator_StorageHeader}" id="storageSection"> 
+                <apex:pageBlockTable value="{!storages}" var="storage" columnsWidth="40%,10%,10%,10%,15%,15%" id="storageTable">
+                    <apex:column value="{!storage.Settings.Name}" headerValue="{!$Label.Notificator_Name}"/>
+                    <apex:column value="{!storage.storageLimit}" headerValue="{!$Label.Notificator_Limit}"/>
+                    <apex:column value="{!storage.usage}" headerValue="{!$Label.Notificator_Usage}"/>
+                    <apex:column value="{!storage.sPercent}" headerValue="{!$Label.Notificator_PercentUsage}"   
+                                 styleClass="{!IF(NOT(ISNULL(storage.Settings.WarningPercentageThreshold__c)) && 
+                                             storage.iPercent>=storage.Settings.WarningPercentageThreshold__c, 'Warning',
+                                             IF(NOT(ISNULL(storage.Settings.InfoPercentageThreshold__c)) && 
+                                             storage.iPercent>=storage.Settings.InfoPercentageThreshold__c,'Info',''))}"/>                    
+                    <apex:column headerValue="{!$ObjectType.NotificatorStorage__c.fields.InfoPercentageThreshold__c.Label}">
+                        <apex:inputField value="{!storage.Settings.InfoPercentageThreshold__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.NotificatorStorage__c.fields.WarningPercentageThreshold__c.Label}">
+                        <apex:inputField value="{!storage.Settings.WarningPercentageThreshold__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" title="{!$Label.Notificator_LicenseHeader}"> 
+                <apex:pageBlockTable value="{!licenses}" var="license" columnsWidth="40%,10%,10%,10%,15%,15%" id="licenseTable">
+                    <apex:column value="{!license.Settings.Name}" headerValue="{!$Label.Notificator_Name}" styleClass="lato"/>
+                    <apex:column value="{!license.Total}" headerValue="{!$Label.Notificator_Total}"/>
+                    <apex:column value="{!license.Used}" headerValue="{!$Label.Notificator_Used}"/>
+                    <apex:column value="{!license.sRemaining}" headerValue="{!$Label.Notificator_Remaining}"   
+                                 styleClass="{!IF(NOT(ISNULL(license.Settings.WarningThreshold__c)) && 
+                                             license.iRemaining<=license.Settings.WarningThreshold__c, 'Warning',
+                                             IF(NOT(ISNULL(license.Settings.InfoThreshold__c)) && 
+                                             license.iRemaining<=license.Settings.InfoThreshold__c,'Info',''))}"/>
+                    <apex:column headerValue="{!$ObjectType.NotificatorLicense__c.fields.InfoThreshold__c.Label}">
+                        <apex:inputField value="{!license.Settings.InfoThreshold__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.NotificatorLicense__c.fields.WarningThreshold__c.Label}">
+                        <apex:inputField value="{!license.Settings.WarningThreshold__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>            
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

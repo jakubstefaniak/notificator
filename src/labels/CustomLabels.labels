@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Notificator_AlertFooter</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator AlertFooter</shortDescription>
+        <value>More info: {0}</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_AlertHeader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator AlertHeader</shortDescription>
+        <value>Salesforce Notificator detected potential problems with your organization!</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_EmailLicenseHeader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator EmailLicenseHeader</shortDescription>
+        <value>License Usage Alerts</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_EmailStorageHeader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator EmailStorageHeader</shortDescription>
+        <value>Storage Usage Alerts</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_KillButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator KillButton</shortDescription>
+        <value>Abort job</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_LicenseAlert</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator LicenseAlert</shortDescription>
+        <value>&apos;&apos;s usage has overstepped {0} threshold! Remaining: {1} licenses.</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_LicenseHeader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator LicenseHeader</shortDescription>
+        <value>License Usage</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_LicenseValidation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator LicenseValidation</shortDescription>
+        <value>cannot be bigger than Total.</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Limit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Limit</shortDescription>
+        <value>Limit</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_PageHeader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator PageHeader</shortDescription>
+        <value>Notificator Settings</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_PercentUsage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator PercentUsage</shortDescription>
+        <value>Percent Usage</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_RecipientHeader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator RecipientHeader</shortDescription>
+        <value>Recipient</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Remaining</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Remaining</shortDescription>
+        <value>Remaining</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_ReplyTo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator ReplyTo</shortDescription>
+        <value>noreply@salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_ResetButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator ResetButton</shortDescription>
+        <value>Reset settings</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_RunButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator RunButton</shortDescription>
+        <value>Run job</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_SaveButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator SaveButton</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Sender_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Sender Name</shortDescription>
+        <value>Salesforce Notificator</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_StorageAlert</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator StorageAlert</shortDescription>
+        <value>&apos;&apos;s usage has overstepped {0} threshold! Actual Percent Usage: {1}.</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_StorageHeader</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator StorageHeader</shortDescription>
+        <value>Storage Usage</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Subject</shortDescription>
+        <value>[ACTION REQUIRED] Salesforce Usage Alert</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Total</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_TriggerError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator TriggerError</shortDescription>
+        <value>Cannot insert more than one record.</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Usage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Usage</shortDescription>
+        <value>Usage</value>
+    </labels>
+    <labels>
+        <fullName>Notificator_Used</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notificator Used</shortDescription>
+        <value>Used</value>
+    </labels>
+</CustomLabels>
